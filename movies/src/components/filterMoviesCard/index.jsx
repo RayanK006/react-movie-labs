@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect}  from "react";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
@@ -25,7 +26,7 @@ export default function FilterMoviesCard(props) {
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/genre/movie/list?api_key=" +
-        import.meta.env.VITE_TMDB_KEYn
+        import.meta.env.VITE_TMDB_KEY
     )
       .then(res => res.json())
       .then(json => {
@@ -60,7 +61,7 @@ export default function FilterMoviesCard(props) {
           <SearchIcon fontSize="large" />
           Filter the movies.
         </Typography>
-           <TextField
+              <TextField
       sx={{...formControl}}
       id="filled-search"
       label="Search field"
@@ -70,16 +71,16 @@ export default function FilterMoviesCard(props) {
       onChange={handleTextChange}
     />
 
+
         <FormControl sx={{...formControl}}>
           <InputLabel id="genre-label">Genre</InputLabel>
-           <Select
+             <Select
     labelId="genre-label"
     id="genre-select"
     defaultValue=""
     value={props.genreFilter}
     onChange={handleGenreChange}
   >
-
             {genres.map((genre) => {
               return (
                 <MenuItem key={genre.id} value={genre.id}>

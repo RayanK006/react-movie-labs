@@ -1,6 +1,6 @@
-
-import React from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "./index.css";
 import HomePage from "./pages/homePage";
 
 const sample = {
@@ -14,22 +14,10 @@ const sample = {
   },
   budget: 200000000,
   genres: [
-    {
-      id: 14,
-      name: "Fantasy",
-    },
-    {
-      id: 12,
-      name: "Adventure",
-    },
-    {
-      id: 878,
-      name: "Science Fiction",
-    },
-    {
-      id: 28,
-      name: "Action",
-    },
+    { id: 14, name: "Fantasy" },
+    { id: 12, name: "Adventure" },
+    { id: 878, name: "Science Fiction" },
+    { id: 28, name: "Action" },
   ],
   homepage:
     "https://www.starwars.com/films/star-wars-episode-viii-the-last-jedi",
@@ -42,40 +30,15 @@ const sample = {
   popularity: 44.208,
   poster_path: "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
   production_companies: [
-    {
-      id: 1,
-      logo_path: "/o86DbpburjxrqAzEDhXZcyE8pDb.png",
-      name: "Lucasfilm",
-      origin_country: "US",
-    },
-    {
-      id: 11092,
-      logo_path: null,
-      name: "Ram Bergman Productions",
-      origin_country: "US",
-    },
-    {
-      id: 2,
-      logo_path: "/wdrCwmRnLFJhEoH8GSfymY85KHT.png",
-      name: "Walt Disney Pictures",
-      origin_country: "US",
-    },
+    { id: 1, logo_path: "/o86DbpburjxrqAzEDhXZcyE8pDb.png", name: "Lucasfilm", origin_country: "US" },
+    { id: 11092, logo_path: null, name: "Ram Bergman Productions", origin_country: "US" },
+    { id: 2, logo_path: "/wdrCwmRnLFJhEoH8GSfymY85KHT.png", name: "Walt Disney Pictures", origin_country: "US" },
   ],
-  production_countries: [
-    {
-      iso_3166_1: "US",
-      name: "United States of America",
-    },
-  ],
+  production_countries: [{ iso_3166_1: "US", name: "United States of America" }],
   release_date: "2017-12-13",
   revenue: 1332459537,
   runtime: 152,
-  spoken_languages: [
-    {
-      iso_639_1: "en",
-      name: "English",
-    },
-  ],
+  spoken_languages: [{ iso_639_1: "en", name: "English" }],
   status: "Released",
   tagline: "Darkness rises... and light to meet it",
   title: "Star Wars: The Last Jedi",
@@ -86,22 +49,12 @@ const sample = {
 
 const movies = [sample, sample, sample, sample, sample, sample, sample];
 
-const App = () => {
-  return (
-      <HomePage movies={movies} />
-  );
-};
+function App() {
+  return <HomePage movies={movies} />;
+}
 
-const rootElement = createRoot( document.getElementById("root") )
-rootElement.render(<App />);
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
-
+  </StrictMode>
+);
