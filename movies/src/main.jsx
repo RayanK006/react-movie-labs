@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import HomePage from "./pages/homePage";
@@ -94,7 +94,6 @@ const App = () => {
 
 const rootElement = createRoot( document.getElementById("root") )
 rootElement.render(<App />);
-=======
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
@@ -105,4 +104,4 @@ createRoot(document.getElementById('root')).render(
     <App />
   </StrictMode>,
 )
->>>>>>> 005ee11110afe2c5a83ff700b3144bee4e3ce258
+
