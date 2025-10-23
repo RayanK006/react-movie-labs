@@ -4,6 +4,7 @@ import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
+import  Language  from "@mui/icons-material/Language";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
@@ -55,6 +56,10 @@ const [drawerOpen, setDrawerOpen] = useState(false);
           icon={<StarRate />}
           label={`${movie.vote_average} (${movie.vote_count})`}
         />
+        <Chip
+          icon={<Language />}
+          label={`Original Language: ${movie.original_language.toLocaleString()}`}
+        />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
 
@@ -71,6 +76,7 @@ const [drawerOpen, setDrawerOpen] = useState(false);
           </li>
         ))}
       </Paper>
+
 
             <Fab
         color="secondary"
