@@ -17,6 +17,9 @@ const UpcomingMoviesPage = (props) => {
 
   const movies = data.results;
 
+  const playlists = movies.filter(m => m.playlist)
+  localStorage.setItem('playlist', JSON.stringify(playlists))
+  const addToPlaylist = (movieId) => true 
   return (
     <PageTemplate
       title="Upcoming Movies"
