@@ -25,9 +25,9 @@ const TrendingPage = (props) => {
       <PageTemplate
         title="Trending Movies"
         movies={movies}
-        // action={(movie) => {
-        //   return <AddToFavoritesIcon movie={movie} />
-        // }}
+        action={(movie) => {
+          null
+        }}
       />
   );
 };
