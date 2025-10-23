@@ -1,8 +1,11 @@
-import AddMovieReviewPage from './pages/addMovieReviewPage'
 import React from "react";
+
+import AddMovieReviewPage from './pages/addMovieReviewPage'
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router";
 import HomePage from "./pages/homePage";
+import TrendingMoviesPage from "./pages/trendingMoviesPage";
+import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
@@ -28,7 +31,8 @@ const App = () => {
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
-            <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
+            <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} /> 
+            <Route path="/movies/trending/today" element={<TrendingMoviesPage />} />        
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
