@@ -1,14 +1,14 @@
 import React from "react";
-import { getTrendingMovies } from "../api/tmdb-api";
+import { getNowPlayingMovies } from "../api/tmdb-api";
 import PageTemplate from '../components/templateMovieListPage';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner';
 
-const TrendingMoviesPage = (props) => {
+const NowPlayingPage = (props) => {
 
   const { data, error, isPending, isError  } = useQuery({
-    queryKey: ['trending'],
-    queryFn: getTrendingMovies,
+    queryKey: ['nowplaying'],
+    queryFn: getNowPlayingMovies,
   })
   
   if (isPending) {
@@ -23,10 +23,10 @@ const TrendingMoviesPage = (props) => {
 
    return (
       <PageTemplate
-        title="Trending Movies"
+        title="Now Playing"
         movies={movies}
         action={(movie) => null}
       />
   );
 };
-export default TrendingMoviesPage;
+export default NowPlayingPage;

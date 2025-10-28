@@ -4,10 +4,12 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router";
 import HomePage from "./pages/homePage";
-import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
+import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
+import PopularMoviesPage from "./pages/popularMoviesPage";
+import NowPlayingMoviesPage from "./pages/nowplayingMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
@@ -32,7 +34,9 @@ const App = () => {
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
             <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} /> 
-            <Route path="/movies/trending/today" element={<TrendingMoviesPage />} />        
+            <Route path="/movies/trending/today" element={<TrendingMoviesPage />} /> 
+            <Route path="/movies/popular" element={<PopularMoviesPage />} /> 
+            <Route path="/movies/now_playing" element={<NowPlayingMoviesPage />} /> 
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />

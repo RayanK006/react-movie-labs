@@ -27,8 +27,11 @@ const SiteHeader = () => {
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Upcoming", path: "/movies/upcoming" },
-    { label: "Trending", path: "/movies/trending/today" },
-  ];
+    { label: "Trending", path: "/movies/trending/today"},
+    { label: "Popular", path: "/movies/popular" },
+    { label: "NowPlaying", path: "/movies/now_playing" }
+
+    ];
 
   const handleMenuSelect = (pageURL) => {
     setAnchorEl(null);

@@ -4,7 +4,7 @@ import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
-import  Language  from "@mui/icons-material/Language";
+import Language  from "@mui/icons-material/Language";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
