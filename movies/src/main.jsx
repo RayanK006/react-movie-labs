@@ -7,7 +7,9 @@ import HomePage from "./pages/homePage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import MoviePage from "./pages/movieDetailsPage";
+import ReccomendationPage from "./pages/movieReccomendation";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage";
+import AddToPlaylistPage from "./pages/addToPlaylist";
 import PopularMoviesPage from "./pages/popularMoviesPage";
 import NowPlayingMoviesPage from "./pages/nowplayingMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
@@ -33,11 +35,13 @@ const App = () => {
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
+            <Route path="/movies/playlist" element={<AddToPlaylistPage />} />
             <Route path="/movies/upcoming" element={<UpcomingMoviesPage />} /> 
             <Route path="/movies/trending/today" element={<TrendingMoviesPage />} /> 
             <Route path="/movies/popular" element={<PopularMoviesPage />} /> 
             <Route path="/movies/now_playing" element={<NowPlayingMoviesPage />} /> 
             <Route path="/movies/:id" element={<MoviePage />} />
+            <Route path=" /movie/:id/recommendations" element={<ReccomendationPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
