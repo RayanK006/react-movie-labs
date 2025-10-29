@@ -3,7 +3,7 @@ import PageTemplate from "../components/templateMovieListPage";
 import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "@tanstack/react-query";
 import { getMovie } from "../api/tmdb-api";
-import Spinner from '../components/spinner';
+import Spinner from '../components/spinner'
 
 const AddToPlaylist = () => {
   const {playlists: movieIds } = useContext(MoviesContext);
@@ -33,7 +33,7 @@ const AddToPlaylist = () => {
   const toDo = () => true;
   return (
     <PageTemplate
-      title="Playlist"
+      title="My Playlist"
       movies={movies}
       action={(movie) => null}
     />
