@@ -12,6 +12,14 @@ const UpcomingMoviesPage = (props) => {
     queryFn: getUpcomingMovies,
   });
 
+    const addToFavorites = (movieId) => {
+    const updatedMovies = movies.map((m) =>
+      m.id === movieId ? { ...m, favorite: true } : m
+    );
+    setMovies(updatedMovies);
+  };
+
+
   if (isPending) return <Spinner />;
   if (isError) return <h1>{error.message}</h1>;
 

@@ -32,7 +32,10 @@ export default function MovieCard({ movie, action }) {
   };
 
   return (
-    <Card>
+    <Card 
+      sx={{
+        backgroundColor: "rgba(244, 224, 224, 1)"
+      }} >
             <CardHeader
         avatar={
           movie.favorite ? (

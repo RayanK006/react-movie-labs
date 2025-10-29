@@ -28,6 +28,7 @@ const HomePage = (props) => {
   const addToFavorites = (movieId) => true 
    return (
       <PageTemplate
+      
         title="Discover Movies"
         movies={movies}
         action={(movie) => {
