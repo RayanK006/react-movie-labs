@@ -158,7 +158,7 @@ export const getNowPlayingMovies = () => {
     });
 };
 
-export const getReccomendation = () => {
+export const getMovieRecommendation = () => {
   return fetch(
     `https://api.themoviedb.org/3/movie/movie_id/recommendations?api_key=${import.meta.env.VITE_TMDB_KEY}&language=en-US&page=1`
   )

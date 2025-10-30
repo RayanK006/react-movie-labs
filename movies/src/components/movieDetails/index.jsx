@@ -6,10 +6,12 @@ import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import Language  from "@mui/icons-material/Language";
 import NavigationIcon from "@mui/icons-material/Navigation";
+import RecommendIcon from '@mui/icons-material/Recommend';
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import MovieRecommendations from "../movieRecommendations.jsx/index.jsx";
 
 const root = {
     display: "flex",
@@ -22,6 +24,8 @@ const root = {
 const chip = { margin: 0.5 };
 const MovieDetails = ({ movie }) => {  // Don't miss this!
 const [drawerOpen, setDrawerOpen] = useState(false);
+const [recdrawerOpen, setRecDrawerOpen] = useState(false);
+
 
   return (
     <>
@@ -94,7 +98,27 @@ const [drawerOpen, setDrawerOpen] = useState(false);
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+
+
+
+        <Fab
+        color="secondary"
+        variant="extended"
+        onClick={() =>setRecDrawerOpen(true)}
+        sx={{
+          position: 'fixed',
+          bottom: '6em',
+          right: '1em'
+        }}
+      >
+        <RecommendIcon />
+        Recommendations
+      </Fab>
+      <Drawer anchor="top" open={recdrawerOpen} onClose={() => setRecDrawerOpen(false)}>
+        <MovieRecommendations movie={movie} />
+      </Drawer>
       </>
+      
   );
 };
 export default MovieDetails ;

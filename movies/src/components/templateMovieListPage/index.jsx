@@ -7,9 +7,7 @@ import Grid from "@mui/material/Grid";
 function MovieListPageTemplate({ movies, title, action }) {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
-  const [ratingFilter, setRating] = useState(0); //add rating filter
   const genreId = Number(genreFilter);
-
 
   let displayedMovies = movies
     .filter((m) => {
@@ -39,7 +37,6 @@ function MovieListPageTemplate({ movies, title, action }) {
             onUserInput={handleChange}
             titleFilter={nameFilter}
             genreFilter={genreFilter}
-            ratingFilter={ratingFilter} 
           />
         </Grid>
         <MovieList action={action} movies={displayedMovies}></MovieList>
