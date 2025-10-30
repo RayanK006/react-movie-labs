@@ -30,7 +30,7 @@ export default function MovieRecommendations({ movie }) {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{minWidth: 550}} aria-label="reviews table">
+      <Table sx={{minWidth: 550}} aria-label="recommendations table">
         <TableHead>
           <TableRow>
             <TableCell >Title</TableCell>
@@ -45,7 +45,7 @@ export default function MovieRecommendations({ movie }) {
               </TableCell>
               <TableCell >
               <Link
-                  to={`/reccomendations/${r.id}`}
+                  to={`/movies/${r.id}`} //url to link
                   state={{
                       reccomendation: r,
                       movie: movie,
