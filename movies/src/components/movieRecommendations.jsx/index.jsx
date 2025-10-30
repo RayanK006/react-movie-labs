@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from "react";
+import React from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -9,16 +9,24 @@ import Paper from "@mui/material/Paper";
 import { Link } from "react-router";
 import { getMovieRecommendation } from "../../api/tmdb-api";
 import { excerpt } from "../../util";
+import { useQuery } from "@tanstack/react-query";
+import Spinner from '../spinner'
 
 export default function MovieRecommendations({ movie }) {
-  const [recommendations, setRecommendations] = useState([]);
+  const { data, error, isPending, isError } = useQuery({
+    queryKey: ['recommendations', { id: movie.id }],
+    queryFn: getMovieRecommendation,
+  });
+  
+  if (isPending) {
+    return <Spinner />;
+  }
 
-  useEffect(() => {
-    getMovieRecommendation(movie.id).then((recommendations) => {
-      setRecommendations(recommendations);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  if (isError) {
+    return <h1>{error.message}</h1>;
+  }
+  
+  const recommendations = data.results;
 
   return (
     <TableContainer component={Paper}>
@@ -26,8 +34,7 @@ export default function MovieRecommendations({ movie }) {
         <TableHead>
           <TableRow>
             <TableCell >Title</TableCell>
-            <TableCell align="center">Excerpt</TableCell>
-            <TableCell align="right">More</TableCell>
+            <TableCell align="justify">More</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -36,7 +43,6 @@ export default function MovieRecommendations({ movie }) {
               <TableCell component="th" scope="row">
                 {r.title}
               </TableCell>
-              <TableCell >{excerpt(r.content)}</TableCell>
               <TableCell >
               <Link
                   to={`/reccomendations/${r.id}`}
