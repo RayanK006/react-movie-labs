@@ -7,11 +7,13 @@ import StarRate from "@mui/icons-material/StarRate";
 import Language  from "@mui/icons-material/Language";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import RecommendIcon from '@mui/icons-material/Recommend';
+import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
 import MovieRecommendations from "../movieRecommendations.jsx/index.jsx";
+import MovieCredits from "../movieCredits/index.jsx"
 
 const root = {
     display: "flex",
@@ -25,7 +27,7 @@ const chip = { margin: 0.5 };
 const MovieDetails = ({ movie }) => {  // Don't miss this!
 const [drawerOpen, setDrawerOpen] = useState(false);
 const [recdrawerOpen, setRecDrawerOpen] = useState(false);
-
+const [creddrawerOpen, setCredDrawerOpen] = useState(false);
 
   return (
     <>
@@ -107,8 +109,8 @@ const [recdrawerOpen, setRecDrawerOpen] = useState(false);
         onClick={() =>setRecDrawerOpen(true)}
         sx={{
           position: 'fixed',
-          bottom: '6em',
-          right: '1em'
+          bottom: '1em',
+          right: '23em'
         }}
       >
         <RecommendIcon />
@@ -117,7 +119,29 @@ const [recdrawerOpen, setRecDrawerOpen] = useState(false);
       <Drawer anchor="top" open={recdrawerOpen} onClose={() => setRecDrawerOpen(false)}>
         <MovieRecommendations movie={movie} />
       </Drawer>
+      
+      
+      <Fab
+        color="secondary"
+        variant="extended"
+        onClick={() =>setCredDrawerOpen(true)}
+        sx={{
+          position: 'fixed',
+          bottom: '1em',
+          right: '12em'
+        }}
+      >
+        <MovieCreationIcon />
+        Credits
+      </Fab>
+      <Drawer anchor="top" open={creddrawerOpen} onClose={() => setCredDrawerOpen(false)}>
+        <MovieCredits movie={movie} />
+      </Drawer>
+      
+      
       </>
+
+      
       
   );
 };
