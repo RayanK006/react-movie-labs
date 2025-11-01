@@ -1,5 +1,6 @@
 import React from "react";
 
+import './index.css'
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router";

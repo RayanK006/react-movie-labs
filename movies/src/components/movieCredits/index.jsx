@@ -25,8 +25,9 @@ export default function MovieCredits({ movie }) {
   if (isError) {
     return <h1>{error.message}</h1>;
   }
-  
-  const credits = data.results;
+  // cast_id|| c.credit.
+   const credits = data.results;
+  //const credits = data?.cast||[]; // fixes the code but i dont get how
 
   return (
     <TableContainer component={Paper}>
@@ -38,14 +39,14 @@ export default function MovieCredits({ movie }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {credits.map((r) => (
+          {cast.map((c) => (
             <TableRow key={c.id}>
               <TableCell component="th" scope="row">
                 {c.cast}
               </TableCell>
               <TableCell >
               <Link
-                  to={`/movies/${c.id}`} //url to link
+                  to={`/credits/${c.id}`} //url to link
                   state={{
                       credit: c,
                       movie: movie,

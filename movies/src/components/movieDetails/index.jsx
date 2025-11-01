@@ -91,7 +91,7 @@ const [creddrawerOpen, setCredDrawerOpen] = useState(false);
         sx={{
           position: 'fixed',
           bottom: '1em',
-          right: '1em'
+          right: '16em'
         }}
       >
         <NavigationIcon />
@@ -110,7 +110,7 @@ const [creddrawerOpen, setCredDrawerOpen] = useState(false);
         sx={{
           position: 'fixed',
           bottom: '1em',
-          right: '23em'
+          right: '36em'
         }}
       >
         <RecommendIcon />
@@ -128,7 +128,7 @@ const [creddrawerOpen, setCredDrawerOpen] = useState(false);
         sx={{
           position: 'fixed',
           bottom: '1em',
-          right: '12em'
+          right: '26em'
         }}
       >
         <MovieCreationIcon />
@@ -137,8 +137,6 @@ const [creddrawerOpen, setCredDrawerOpen] = useState(false);
       <Drawer anchor="top" open={creddrawerOpen} onClose={() => setCredDrawerOpen(false)}>
         <MovieCredits movie={movie} />
       </Drawer>
-      
-      
       </>
 
       

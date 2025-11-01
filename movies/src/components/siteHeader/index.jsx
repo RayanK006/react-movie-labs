@@ -45,14 +45,17 @@ const SiteHeader = () => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+      <AppBar position="fixed" color="secondary"
+      sx={{
+  backgroundColor: '#000000ff'
+      }}>
         <Toolbar>
           <Typography variant="h4" sx={{ flexGrow: 1 }}>
             TMDB Client
           </Typography>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          {/* <Typography variant="h6" sx={{ flexGrow: 1 }}>
             All you ever wanted to know about Movies!
-          </Typography>
+          </Typography> */}
             {isMobile ? (
               <>
                 <IconButton

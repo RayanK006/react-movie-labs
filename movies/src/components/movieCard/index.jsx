@@ -50,6 +50,8 @@ export default function MovieCard({ movie, action }) {
           </Typography>
         }
       />
+
+
       <CardMedia
         sx={{ height: 500 }}
         image={
