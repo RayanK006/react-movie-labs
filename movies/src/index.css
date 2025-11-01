@@ -24,11 +24,11 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex;  commenting these out because once it imports to main it shrinks the playlist and upcoming as they dont have content yet
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
-  background-color: #d03737;
+  background-color: #930d0d;
 }
 
 h1 {
