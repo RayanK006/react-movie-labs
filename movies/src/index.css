@@ -24,11 +24,11 @@ a:hover {
 
 body {
   margin: 0;
-  /* display: flex;  commenting these out because once it imports to main it shrinks the playlist 
-  /* place-items: center;                       and upcoming as they dont have content yet
+  /* /* display: flex;  commenting these out because once it imports to main it shrinks the playlist 
+  /* place-items: center;                       and upcoming as they dont have content yet */
   min-width: 320px;
   min-height: 100vh;
-  background-color: #930d0d;
+  background-color: #ff3333;
 }
 
 h1 {

@@ -3,6 +3,7 @@ import PageTemplate from "../components/templateMovieListPage";
 import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "@tanstack/react-query";
 import { getMovie } from "../api/tmdb-api";
+import RemoveFromPlaylist from "../components/cardIcons/removeFromPlaylist";
 import Spinner from '../components/spinner'
 
 const AddToPlaylist = () => {
@@ -35,7 +36,13 @@ const AddToPlaylist = () => {
     <PageTemplate
       title="My Playlist"
       movies={movies}
-      action={(movie) => null}
+      action={(movie) => {
+        return (
+          <>
+          <RemoveFromPlaylist movie={movie}/>
+          </>
+        )
+      }}
     />
   );
 };
