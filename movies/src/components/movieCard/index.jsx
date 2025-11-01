@@ -34,7 +34,7 @@ export default function MovieCard({ movie, action }) {
   return (
     <Card 
       sx={{
-        backgroundColor: "rgba(244, 224, 224, 1)"
+        backgroundColor: "rgba(231, 231, 231, 1)"
       }} >
             <CardHeader
         avatar={
@@ -70,7 +70,10 @@ export default function MovieCard({ movie, action }) {
           </Grid>
           <Grid size={{xs: 6}}>
             <Typography variant="h6" component="p">
-              <StarRateIcon fontSize="small" />
+              <StarRateIcon fontSize="small" 
+               sx={{
+        backgroundColor: "rgba(230, 166, 18, 1)"
+      }}/>
               {"  "} {movie.vote_average}{" "}
             </Typography>
           </Grid>
@@ -81,7 +84,10 @@ export default function MovieCard({ movie, action }) {
         {action(movie)}
       
         <Link to={`/movies/${movie.id}`}>
-          <Button variant="outlined" size="medium" color="primary">
+          <Button variant="outlined" size="medium" color="primary"
+           sx={{
+        backgroundColor: "rgba(255, 255, 255, 1)"
+      }}>
             More Info ...
           </Button>
         </Link>
